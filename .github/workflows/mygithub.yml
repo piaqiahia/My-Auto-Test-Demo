@@ -53,5 +53,5 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./allure-report
-        # 强制使用简单的分支推送，避免复杂的 URL 参数
+        # 强制使用简单的分支推送，避免复杂的 URL参数
         force_orphan: false # 默认值，显式声明
