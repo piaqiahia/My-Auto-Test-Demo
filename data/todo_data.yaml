@@ -1,0 +1,13 @@
+test_tasks:
+  - name: "写代码"
+    completed: false
+  - name: "做算法题"
+    completed: false
+  - name: "学数学"
+    completed: false
+  - name: "学英语"
+    completed: false
+
+new_task_payload:
+  title: "新任务：学习PlayWright"
+  completed: false

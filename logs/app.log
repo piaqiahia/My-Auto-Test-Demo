@@ -1,0 +1,24 @@
+2026-01-27 20:22:37,096 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-27 20:22:37,202 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-27 20:29:16,908 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-27 20:29:16,910 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'complete': False}}
+2026-01-27 20:29:20,257 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"complete\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accep
+2026-01-27 20:29:20,344 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-27 20:31:15,590 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-27 20:31:15,592 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-27 20:31:18,551 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
+2026-01-27 20:31:18,554 - conftest - INFO - === 销毁 ApiClient ===
