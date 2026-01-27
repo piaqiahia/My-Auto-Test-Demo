@@ -1,0 +1,10 @@
+INFO     conftest:conftest.py:18 === 初始化 ApiClient (HttpBin) ===
+INFO     utils.api_client:api_client.py:17 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+INFO     utils.api_client:api_client.py:22 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce

@@ -1,0 +1,21 @@
+{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "79", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.32.5", 
+    "X-Amzn-Trace-Id": "Root=1-6978b3ac-22c8b1c2607cc7423a524c1c"
+  }, 
+  "json": {
+    "completed": false, 
+    "title": "\u65b0\u4efb\u52a1\uff1a\u5b66\u4e60PlayWright"
+  }, 
+  "origin": "52.190.140.128", 
+  "url": "https://httpbin.org/post"
+}

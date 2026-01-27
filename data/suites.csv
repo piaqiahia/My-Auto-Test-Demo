@@ -1,0 +1,11 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Jan 27 12:46:37 UTC 2026","Tue Jan 27 12:46:37 UTC 2026","652","tests.ui","test_todo_ui","","","","test_add_and_complete_todo",""
+"passed","Tue Jan 27 12:46:36 UTC 2026","Tue Jan 27 12:46:36 UTC 2026","369","tests.api","test_todo_api","","","","test_create_todo_api","
+    模拟向后端发送创建 Todo 的请求
+    使用 HttpBin 的 /post 接口，它会返回我们发送的 JSON 数据
+    流程：准备: 从 YAML 文件加载测试数据 payload
+        执行: 通过 api_client 向 httpbin.org/post 发送一个 POST 请求
+        验证:检查 HTTP 状态码是否为 200。检查响应体中的 json 字段是否包含了我们发送的 title 和 completed 字段
+        记录: 将完整的 API 响应作为 JSON 附件保存到 Allure 报告中
+    "
+"passed","Tue Jan 27 12:46:38 UTC 2026","Tue Jan 27 12:46:38 UTC 2026","393","tests.ui","test_todo_ui","","","","test_filter_active_items",""

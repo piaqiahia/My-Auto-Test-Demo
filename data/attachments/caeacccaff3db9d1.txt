@@ -1,0 +1,10 @@
+2026-01-27 12:46:36,411 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-27 12:46:36,413 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-27 12:46:36,781 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
