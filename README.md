@@ -48,9 +48,9 @@ allure serve ./allure-results
 
 ## 📊 在线报告
 
-每次向 `main` 分支推送代码或发起 Pull Request 时，GitHub Actions 会自动执行测试，并将 Allure 报告发布到：
+每次向 `master` 分支推送代码或发起 Pull Request 时，GitHub Actions 会自动执行测试，并将 Allure 报告发布到：
 
-👉 **[https://<your-username>.github.io/<your-repo-name>/](https://<your-username>.github.io/<your-repo-name>/)**
+👉 **[https://piaqiahia.github.io/My-Auto-Test-Demo/](https://piaqiahia.github.io/My-Auto-Test-Demo/)**
 
 ## 📂 项目结构
 
@@ -66,12 +66,13 @@ allure serve ./allure-results
 │   ├── api/
 │   │   └── test_todo_api.py # API 测试用例
 │   └── ui/
-│       └── test_todo_ui.py  # UI 自动化测试用例
+│        ├── test_todo_ui.py  # UI 自动化测试用例
+│        └── pages/
+│           └── todo_page.py     # Page Object (UI 页面封装)
 ├── utils/
 │   ├── api_client.py        # 封装的 API 客户端
-│   ├── logger.py            # 统一日志工具
-│   └── pages/
-│       └── todo_page.py     # Page Object (UI 页面封装)
+│   └── logger.py            # 统一日志工具
+│   
 ├── conftest.py              # Pytest 全局配置与 Fixture
 ├── requirements.txt         # Python 依赖列表
 └── README.md                # 本文件
@@ -84,24 +85,3 @@ allure serve ./allure-results
 1.  你的代码遵循项目的编码风格。
 2.  所有测试用例均已通过。
 3.  更新了相关的文档（如果需要）。
-
-## 📜 许可证
-
-本项目基于 [MIT 许可证](LICENSE) 开源。
-```
-
----
-
-### ✨ 使用说明
-
-1.  **替换占位符**:
-    *   将所有的 `<your-username>` 替换为你的 GitHub 用户名。
-    *   将所有的 `<your-repo-name>` 替换为你的仓库名称。
-2.  **徽章 (Badges)**:
-    *   第一行的两个徽章会自动从你的仓库获取状态。确保你的工作流文件名为 `test.yml`，否则需要修改链接。
-3.  **在线报告链接**:
-    *   确保你已经按照之前的指导，正确配置了 GitHub Pages，否则该链接会是 404。
-4.  **许可证**:
-    *   模板默认使用 MIT 许可证。如果你的项目使用其他许可证，请相应地修改 `LICENSE` 文件和 `README` 中的描述。
-
-这个 `README` 不仅清晰地介绍了项目，还提供了完整的上手指南，对于任何新加入项目的开发者或审阅者来说都极其友好。
