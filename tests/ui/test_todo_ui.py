@@ -47,3 +47,19 @@ def test_filter_active_items(page):
     todo_page.assert_todo_exists("未完成任务", completed = False) # 未选中则可见
     completed_locator = page.locator("ul.todo-list li:has-text('已完成任务')")
     expect(completed_locator).not_to_be_visible()
+
+@allure.feature("TodoMVC UI 自动化")
+@allure.story("【故障模拟】故意制造失败")
+def test_intentional_failure_demo(page):
+    """
+    此用例用于演示：
+    1. 测试如何捕获失败
+    2. Allure 如何自动附上失败现场的截图和日志
+    """
+    todo_page = TodoPage(page)
+    todo_page.navigate()
+    todo_page.add_todo("这是一个会失败的任务")
+
+    with allure.step("故意执行一个错误的断言"):
+        # 这个断言一定会失败，因为我们只添加了1个任务，却断言有999个
+        assert todo_page.get_todo_count() == 999, "断言预期任务数为999，但实际是1"
