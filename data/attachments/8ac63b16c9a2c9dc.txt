@@ -1,0 +1,2 @@
+2026-01-28 05:54:44,680 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-01-28 05:54:44,718 - conftest - INFO - === 销毁 ApiClient ===

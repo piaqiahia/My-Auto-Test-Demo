@@ -1,4 +1,5 @@
 "Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
 "","TodoMVC UI 自动化","核心UI测试","0","0","1","0","0"
 "","TodoMVC UI 自动化","过滤功能","0","0","1","0","0"
+"","TodoMVC UI 自动化","【故障模拟】故意制造失败","1","0","0","0","0"
 "","Todo API 模拟测试(HttpBin)","POST 创建资源","0","0","1","0","0"
