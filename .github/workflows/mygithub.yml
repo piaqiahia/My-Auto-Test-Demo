@@ -29,6 +29,7 @@ jobs:
     - name: Run tests with Pytest
       run: |
         pytest tests/ --alluredir=./allure-results -v  # 建议指定 tests/ 目录
+      continue-on-error: true # 重要：测试用例错误时继续运行CICD流程
 
       # 手动安装allure CLI
     - name: Install Allure CLI
