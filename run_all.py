@@ -27,7 +27,7 @@ JMETER_BIN = "jmeter.bat" if platform.system() == "Windows" else "jmeter"
 JMETER_RUN_CMD = [
     JMETER_BIN,
     "-n",
-    "-t", "jmeter_script/View_Results_Tree.jmx", # 指定要运行的 .jmx 脚本路径
+    "-t", "jmeter_script/View_Results_Tree1.jmx", # 指定要运行的 .jmx 脚本路径
     "-l", "jmeter_script/result.jtl" # 指定结果日志输出文件（.jtl 格式）
 ]
 

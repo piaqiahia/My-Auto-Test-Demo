@@ -1,87 +1,134 @@
+# README.md
+
 ```markdown
-# 🧪 TodoMVC 自动化测试套件
-本项目是一个现代化的 Web 自动化测试示例，集成了 **API 测试** 与 **UI 自动化测试**，并通过 **GitHub Actions** 实现持续集成，并自动生成美观的 **Allure 在线测试报告**。
+# 🧪 全栈自动化测试演示项目
 
-## 🌟 核心特性
+> 一个集 **API 测试**、**UI 自动化** 与 **性能压测** 于一体的端到端自动化测试框架，适用于 Web 应用的质量保障。本项目采用 Python + Playwright + Pytest + Allure + JMeter 技术栈，并集成 GitHub Actions 实现 CI/CD。
 
-- **双重验证**: 同时覆盖后端 API 逻辑和前端 UI 交互。
-- **Page Object Model (POM)**: 使用 POM 设计模式，确保 UI 测试代码高内聚、易维护。
-- **Allure 报告**: 生成包含步骤、截图、日志和附件的交互式测试报告。
-- **CI/CD 集成**: 通过 GitHub Actions 实现代码提交后自动运行测试并部署报告。
-- **数据驱动**: 测试数据与代码分离，存放在 `YAML` 文件中，便于管理和扩展。
+---
 
-## 🚀 快速开始
+## 项目亮点
 
-### 1. 克隆项目
+- **三层测试覆盖**：API 接口测试 + Web UI 自动化 + JMeter 性能压测
+- **Page Object Model (POM)** 架构，提升 UI 测试可维护性
+- **Allure 可视化报告**：含步骤追踪、失败截图、API 响应附件
+- **一键执行脚本** (`run_all.py`)：自动运行全部测试并生成报告
+- **Docker 支持**：通过 `docker-compose` 快速搭建测试环境
+- **GitHub Actions CI/CD**：代码推送后自动测试并发布报告至 GitHub Pages
 
-```bash
-git clone https:/github.com/piaqiahia/My-Auto-Test-Demo.git
-cd My-Auto-Test-Demo
-```
+---
 
-### 2. 安装依赖
-
-```bash
-# 创建虚拟环境
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# venv\Scripts\activate   # Windows
-
-# 安装 Python 依赖
-pip install -r requirements.txt
-
-# 安装 Playwright 浏览器
-playwright install
-```
-
-### 3. 本地运行测试
-
-```bash
-# 运行所有测试并生成 Allure 结果
-pytest tests/ --alluredir=./allure-results
-
-# 生成并启动本地 Allure 报告服务
-allure serve ./allure-results
-```
-
-> **注意**: 请确保已安装 [Allure CLI](https://docs.qameta.io/allure-report/docs/getting-started/commandline/)。
-
-## 📊 在线报告
-
-每次向 `master` 分支推送代码或发起 Pull Request 时，GitHub Actions 会自动执行测试，并将 Allure 报告发布到：
-
-👉 **[https://piaqiahia.github.io/My-Auto-Test-Demo/](https://piaqiahia.github.io/My-Auto-Test-Demo/)**
-
-## 📂 项目结构
+## 项目结构
 
 ```
-.
 ├── .github/workflows/
-│   └── test.yml             # GitHub Actions CI/CD 配置文件
+│   └── mygithub.yml         # GitHub Actions CI/CD 配置
 ├── data/
-│   └── todo_data.yaml       # 测试数据文件
-├── logs/
-│   └── app.log              # 应用日志 (运行后生成)
+│   └── todo_data.yaml       # 测试数据（YAML 格式）
+├── jmeter_script/           # JMeter 脚本与测试数据
+│   ├── View_Results_Tree1.jmx
+│   └── users.csv
+├── logs/                    # 运行时生成的日志文件
+├── reports/                 # 测试报告输出目录
+│   ├── allure_report        # Allure HTML 报告
+│   └── jmeter_report        # JMeter Dashboard 报告
 ├── tests/
-│   ├── api/
-│   │   └── test_todo_api.py # API 测试用例
-│   └── ui/
-│        ├── test_todo_ui.py  # UI 自动化测试用例
-│        └── pages/
-│           └── todo_page.py     # Page Object (UI 页面封装)
+│   ├── api/                 
+│       └── test_todo_api.py # API 测试用例
+│   └── ui/                  # UI 自动化测试用例
+│       └── pages/           # Page Object 封装
 ├── utils/
-│   ├── api_client.py        # 封装的 API 客户端
+│   ├── api_client.py        # 封装的 HTTP 客户端
 │   └── logger.py            # 统一日志工具
-│   
 ├── conftest.py              # Pytest 全局配置与 Fixture
-├── requirements.txt         # Python 依赖列表
-└── README.md                # 本文件
+├── run_all.py               # 一体化测试执行入口
+├── dockerfile               # 镜像生成流程
+├── docker-compose.yml       # Docker 环境定义
+└── requirements.txt         # Python 依赖列表
 ```
 
-## 🤝 贡献指南
+---
 
-欢迎提交 Issue 或 Pull Request！在贡献前，请确保：
+## 快速开始
 
-1.  你的代码遵循项目的编码风格。
-2.  所有测试用例均已通过。
-3.  更新了相关的文档（如果需要）。
+### 1. 安装依赖
+
+```bash
+pip install -r requirements.txt
+playwright install --with-deps  # 安装浏览器驱动
+```
+
+> **注意**：需提前安装 [JMeter](https://jmeter.apache.org/) 并配置到 `PATH`。
+
+### 2. 本地运行全部测试
+
+```bash
+python run_all.py
+```
+
+执行后将：
+- 运行 `tests/` 下所有 Pytest 用例（含 API 与 UI）
+- 生成 Allure 原始结果 → 转换为 HTML 报告（`reports/allure_report/index.html`）
+- 执行 JMeter 脚本 → 生成性能报告（`reports/jmeter_report/index.html`）
+
+### 3. 查看报告
+
+- **Allure 报告**：打开 `reports/allure_report/index.html`
+- **JMeter 报告**：打开 `reports/jmeter_report/index.html`
+- **日志**：查看 `logs/app.log`
+
+---
+
+## Docker 支持
+
+使用 Docker Compose 启动测试环境（含 Allure 实时服务）：
+
+```bash
+docker-compose up --build
+```
+
+- Allure 报告服务：`http://localhost:5050`
+- 测试结果会自动同步到 `./allure-results`
+
+---
+
+##  CI/CD 流程（GitHub Actions）
+
+当向 `master` 分支推送代码或发起 PR 时，自动触发以下流程：
+
+1. 安装 Python、Playwright、JMeter、Allure CLI
+2. 并行执行：
+   - Pytest 测试（生成 Allure 结果）
+   - JMeter 性能测试（生成 JTL 日志）
+3. 生成 Allure 与 JMeter HTML 报告
+4. 将报告部署到 **GitHub Pages**（路径：`/allure` 和 `/jmeter`）
+
+> 报告访问地址：`https://piaqiahia.github.io/My-Auto-Test-Demo/allure`
+> 及`https://piaqiahia.github.io/My-Auto-Test-Demo/jmeter`
+
+---
+
+## 技术栈
+
+| 类别 | 工具 |
+|------|------|
+| 编程语言 | Python 3.11+ |
+| UI 自动化 | Playwright |
+| 测试框架 | Pytest |
+| API 测试 | requests + httpbin.org |
+| 报告生成 | Allure |
+| 性能测试 | Apache JMeter |
+| CI/CD | GitHub Actions |
+| 容器化 | Docker / Docker Compose |
+
+---
+
+## 适用场景
+
+- 团队自动化测试框架参考
+- 学习 Playwright + Allure + JMeter 集成实践
+
+---
+
+> **让自动化测试更简单、更可靠、更可视化！**
+```
