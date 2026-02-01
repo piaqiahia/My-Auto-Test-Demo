@@ -22,3 +22,130 @@
     "Accept": "*/*", 
     "Acce
 2026-01-27 20:31:18,554 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-28 13:45:35,231 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-01-30 15:50:54,394 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-30 15:50:54,411 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-30 15:50:57,381 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
+2026-01-30 15:51:05,984 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-01-30 15:51:06,031 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-30 15:53:31,452 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-30 15:53:31,454 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-30 15:53:33,754 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
+2026-01-30 15:53:38,664 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-01-30 15:53:38,718 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-30 16:13:51,951 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-30 16:13:51,953 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-30 16:13:53,418 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
+2026-01-30 16:14:00,018 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-01-30 16:14:00,074 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-30 16:18:44,933 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-30 16:18:44,935 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-30 16:18:47,652 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
+2026-01-30 16:18:52,621 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-01-30 16:18:52,671 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-30 16:21:42,580 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-30 16:21:42,582 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-30 16:21:48,691 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-30 16:22:50,324 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-30 16:22:50,326 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-30 16:22:52,135 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
+2026-01-30 16:22:57,299 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-01-30 16:22:57,353 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-30 20:50:24,483 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-30 20:50:24,539 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-30 20:50:28,331 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-30 20:50:30,208 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-30 20:50:30,210 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-30 20:50:35,422 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
+2026-01-30 20:50:43,550 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-01-30 20:50:43,600 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-30 20:53:01,352 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-30 20:53:01,354 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-30 20:53:07,546 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
+2026-01-30 20:53:12,660 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-01-30 20:53:12,712 - conftest - INFO - === 销毁 ApiClient ===
+2026-01-30 20:58:27,538 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-01-30 20:58:27,540 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-01-30 20:59:14,793 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
+2026-01-30 20:59:20,845 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-01-30 20:59:20,898 - conftest - INFO - === 销毁 ApiClient ===
+2026-02-01 12:12:54,959 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-02-01 12:12:54,962 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-02-01 12:12:56,729 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
+2026-02-01 12:13:06,666 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-02-01 12:13:06,715 - conftest - INFO - === 销毁 ApiClient ===
+2026-02-01 12:15:44,281 - conftest - INFO - === 初始化 ApiClient (HttpBin) ===
+2026-02-01 12:15:44,283 - utils.api_client - INFO - 发送请求：POSThttps://httpbin.org//post|paramas:{'json': {'title': '新任务：学习PlayWright', 'completed': False}}
+2026-02-01 12:15:46,457 - utils.api_client - INFO - 响应成功：200|body:{
+  "args": {}, 
+  "data": "{\"title\": \"\\u65b0\\u4efb\\u52a1\\uff1a\\u5b66\\u4e60PlayWright\", \"completed\": false}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Acce
+2026-02-01 12:15:51,425 - conftest - ERROR - 已将失败截图附加到 Allure 报告。
+2026-02-01 12:15:51,479 - conftest - INFO - === 销毁 ApiClient ===

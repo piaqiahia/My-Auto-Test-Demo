@@ -19,6 +19,7 @@ def get_logger(name): # 定义函数，接收一个 name（通常传入 __name__
     if not logger.handlers: # 检查该 logger 是否已绑定过 handler 如果没有，才进行后续配置。避免多次调用时重复添加 handler（否则每调用一次，日志就会多输出一遍）
         os.makedirs("logs", exist_ok = True)
 
+        # Python 的 logging 模块采用 Logger → Handler → Output 的结构 必须添加handler指定输出位置
         console_handler = logging.StreamHandler() # 创建控制台输出处理器（默认输出到 sys.stderr）
         console_handler.setLevel(logging.INFO) # 设置其只处理 INFO 及以上级别的日志
 
@@ -44,4 +45,4 @@ def get_logger(name): # 定义函数，接收一个 name（通常传入 __name__
         logger.addHandler(console_handler)
         logger.addHandler(file_handler)
 
-        return logger
+        return logger # logger被调用会同时在终端和日志打出同样内容 因为绑定了两个

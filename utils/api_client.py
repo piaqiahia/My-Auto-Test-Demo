@@ -1,7 +1,7 @@
 import requests
 from utils.logger import get_logger
 
-logger = get_logger(__name__)
+logger = get_logger(__name__) # 创建模块级日志记录器 将当前文件名传给get_logger 方便显示哪里出了问题
 
 class ApiClient:
     def __init__(self, base_url = "https://httpbin.org/"): # base_url: API 的根地址

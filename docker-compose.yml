@@ -1,0 +1,25 @@
+# docker-compose.yml
+version: '3.8'
+services:
+  test:
+    build: .
+    volumes:
+      - ./allure-results:/app/allure-results
+    command: sh -c "pytest tests/ --alluredir=./allure-results"
+
+  allure:
+    image: frankescobar/allure-docker-service:latest
+    ports:
+      - "5050:5050"
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: 1
+      KEEP_HISTORY: "TRUE"
+    volumes:
+      - ./allure-results:/app/allure-results
+
+  softtest:
+    image: my-python-softtest
+    volumes:
+      - ./reports:/app/reports
+    working_dir: /app
+    command: python run_all.py

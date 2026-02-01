@@ -10,7 +10,7 @@ def load_test_data():
     with open("data/todo_data.yaml", "r", encoding = "utf-8") as f:
         return yaml.safe_load(f) # safe_load 只允许加载基本的 Python 数据类型（如字典、列表、字符串、数字等）
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="session") # session:第一个测试用例执行前就完成初始化
 def test_data():
     return load_test_data()
 
@@ -19,7 +19,7 @@ def api_client():
     logger.info("=== 初始化 ApiClient (HttpBin) ===")
     client = ApiClient()
     yield client
-    logger.info("=== 销毁 ApiClient ===")
+    logger.info("=== 销毁 ApiClient ===") # fixture:seesion 会在所有用例完成后执行teardown的内容
 
 @pytest.fixture # 不指定则默认function 调用时如果形参有page pytest将自动调入
 def page():

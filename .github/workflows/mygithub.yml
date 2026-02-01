@@ -26,10 +26,23 @@ jobs:
         pip install -r requirements.txt
         playwright install --with-deps
 
+    # 安装Jmeter
+    - name: Install Jmeter
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jmeter
+
     - name: Run tests with Pytest
       run: |
         pytest tests/ --alluredir=./allure-results -v  # 建议指定 tests/ 目录
       continue-on-error: true # 重要：测试用例错误时继续运行CICD流程
+
+    # 运行Jmeter脚本
+    - name: Run JMeter Tests
+      run: |
+        mkdir -p ./jmeter-results
+        jmeter -n -t ./jmeter_script/View_Results_Tree.jmx -l ./jmeter-results/result.jtl -e -o ./jmeter-report
+        continue-on-error: true
 
       # 手动安装allure CLI
     - name: Install Allure CLI
@@ -38,7 +51,6 @@ jobs:
         tar -zxvf allure-2.29.0.tgz
         sudo mv allure-2.29.0 /opt/allure
         echo "/opt/allure/bin" >>  $GITHUB_PATH  
-        
 
     - name: Generate Allure report
       run: |
@@ -49,10 +61,18 @@ jobs:
         ls -la ./allure-report/
         echo "Report size:  $ (du -sh ./allure-report)"
 
+    # 创建一个统一的发布目录
+    - name: Prepare Unified Report Directory
+      run: |
+        mkdir -p ./gh-pages-deploy
+        # 复制 Allure 报告到 /allure 子目录
+        cp -r ./allure-report ./gh-pages-deploy/allure
+        # 复制 JMeter 报告到 /jmeter 子目录
+        cp -r ./jmeter-report ./gh-pages-deploy/jmeter
+
+    # 部署到 GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./allure-report
-        # 强制使用简单的分支推送，避免复杂的 URL参数
-        force_orphan: false # 默认值，显式声明
+        deploy_key: ${{ secrets.ACTION_DEPLOY_KEY }}
+        publish_dir: ./gh-pages-deploy # 部署整个统一目录
