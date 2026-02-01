@@ -46,7 +46,7 @@ jobs:
       run: |
         mkdir -p ./jmeter-results
         # 使用 -n (非GUI), -t (脚本), -l (日志), -e (生成报告), -o (报告输出目录)
-        jmeter -n -t ./jmeter/test-plan.jmx -l ./jmeter-results/result.jtl -e -o ./jmeter-report
+        jmeter -n -t ./jmeter_script/View_Results_Tree.jmx -l ./jmeter-results/result.jtl -e -o ./jmeter-report
       continue-on-error: true
 
       # 手动安装allure CLI
