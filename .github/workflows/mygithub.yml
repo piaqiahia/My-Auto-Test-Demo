@@ -27,10 +27,14 @@ jobs:
         playwright install --with-deps
 
     # 安装Jmeter
-    - name: Install Jmeter
+    - name: Install JMeter
       run: |
-        sudo apt-get update
-        sudo apt-get install -y jmeter
+        # 下载 JMeter (这里以 5.6.3 为例，你可以替换为最新版)
+        JMETER_VERSION=5.6.3
+        wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz
+        tar -xzf apache-jmeter-${JMETER_VERSION}.tgz
+        # 将 JMeter 的 bin 目录加入 PATH
+        echo "$(pwd)/apache-jmeter-${JMETER_VERSION}/bin" >> $GITHUB_PATH
 
     - name: Run tests with Pytest
       run: |
@@ -41,8 +45,9 @@ jobs:
     - name: Run JMeter Tests
       run: |
         mkdir -p ./jmeter-results
-        jmeter -n -t ./jmeter_script/View_Results_Tree.jmx -l ./jmeter-results/result.jtl -e -o ./jmeter-report
-        continue-on-error: true
+        # 使用 -n (非GUI), -t (脚本), -l (日志), -e (生成报告), -o (报告输出目录)
+        jmeter -n -t ./jmeter/test-plan.jmx -l ./jmeter-results/result.jtl -e -o ./jmeter-report
+      continue-on-error: true
 
       # 手动安装allure CLI
     - name: Install Allure CLI
