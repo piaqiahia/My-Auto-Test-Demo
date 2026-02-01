@@ -41,7 +41,7 @@ jobs:
         pytest tests/ --alluredir=./allure-results -v  # 建议指定 tests/ 目录
       continue-on-error: true # 重要：测试用例错误时继续运行CICD流程
 
-    # 运行Jmeter脚本
+    # 运行Jmeter脚本 如果使用了csv导入文件要在jmx同文件夹下带上
     - name: Run JMeter Tests
       run: |
         mkdir -p ./jmeter-results
